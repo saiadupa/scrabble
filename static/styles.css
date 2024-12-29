@@ -1,0 +1,54 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pattern-box,
+.letter-box {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.results-section ul li {
+    margin: 5px 0;
+}
+
+.matched-word {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.other-word {
+    background-color: #e2e3e5;
+    border: 1px solid #d6d8db;
+    color: #383d41;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.matched-letter {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrabble Cheat code</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        .matched-word {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .other-word {
+            background-color: #e2e3e5;
+            border: 1px solid #d6d8db;
+            color: #383d41;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .matched-letter {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .card-5 {
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Scrabble cheat</h1>
+        <form id="scrabble-form" class="card-5 p-4">
+            <div class="form-group">
+                <label for="pattern">Enter the word pattern:</label>
+                <div id="pattern" class="d-flex justify-content-center">
+                    {% for _ in range(7) %}
+                    <input type="text" class="form-control pattern-box mx-1" maxlength="1" name="pattern">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="letters">Enter the letters you have:</label>
+                <div id="letters" class="d-flex justify-content-center">
+                    {% for _ in range(7) %}
+                    <input type="text" class="form-control letter-box mx-1" maxlength="1" name="letters">
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary btn-block">Find Words</button>
+        </form>
+        <div class="results-section mt-4">
+            <h2>Results</h2>
+            <div id="results" class="d-flex flex-wrap justify-content-center"></div>
+        </div>
+        <div id="error" class="error mt-4"></div>
+    </div>
+
+    <!-- Link to Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
